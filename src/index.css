@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #070b10;
+  --surface: #10161f;
+  --accent: #2dd4bf;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c1118;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2dd4bf;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14b8a6;
+}
+
+::selection {
+  background-color: #2dd4bf;
+  color: #070b10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Syne, system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.loading-text {
+  font-family: Syne, system-ui, sans-serif;
+  font-size: clamp(2rem, 10vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.glass {
+  background: rgba(16, 22, 31, 0.72);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2dd4bf 0%, #5eead4 50%, #99f6e4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-shell {
+  @apply relative overflow-hidden py-24 md:py-28;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-white/10 bg-dark-950/80 px-4 py-3.5 text-white outline-none transition-all duration-300 placeholder:text-ink-muted/50 focus:border-accent/60 focus:ring-2 focus:ring-accent/20;
+}
+
+.tag {
+  @apply inline-flex items-center rounded-lg border border-white/10 bg-dark-950/60 px-2.5 py-1 text-xs text-ink-soft transition-colors duration-300;
+}
+
+.tag-accent {
+  @apply inline-flex items-center rounded-lg border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs text-accent;
+}
