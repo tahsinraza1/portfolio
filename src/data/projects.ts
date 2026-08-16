@@ -149,4 +149,47 @@ export const projects: Project[] = [
       badge: 'bg-accent/15 text-accent border-accent/30',
     },
   },
+  {
+    id: 'portfolio',
+    title: 'Personal Portfolio',
+    tagline: 'Premium Dark Developer Landing Page',
+    description:
+      'Interactive developer portfolio showcasing skills, projects, experience, and education with premium motion design.',
+    fullDescription:
+      'A premium dark-themed portfolio website built with React, TypeScript, and Framer Motion. Features include a cinematic loading screen with software engineering video background, smooth scroll navigation, interactive card hover effects with Spring + Lift + 3D Tilt, and fully responsive mobile-first design.',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=700&fit=crop',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Framer Motion'],
+    github: 'https://github.com/tahsinraza1/portfolio',
+    liveDemo: 'https://tahsinraza.vercel.app/',
+    featured: true,
+    clientProject: false,
+    industry: 'Personal Project',
+    location: 'Lucknow, India',
+    stats: [
+      { label: 'Built with', value: 'React + TS' },
+      { label: 'Animations', value: 'Framer Motion' },
+      { label: 'Deployed', value: 'Vercel' },
+    ],
+    highlights: [
+      'Cinematic loading screen',
+      'Premium motion design',
+      'Full responsiveness',
+      'Dark theme',
+    ],
+    features: [
+      'Premium dark developer landing page with glassmorphism, soft glows, and gradient accents.',
+      'Cinematic 4-second loading screen with software engineering video background and count-up animation.',
+      'Interactive card hover effects using Spring + Lift + 3D Tilt for premium product feel across all sections.',
+      'Fully responsive design with full-screen mobile menu, smooth scroll navigation, and mobile-first optimization.',
+      'Sections include Hero with CTA, About with focus areas, Skills taxonomy, Projects showcase, Experience timeline, Education & Certifications, and Contact form.',
+      'Professional favicon (TR logo), custom cursor follower, and smooth transitions throughout the portfolio.',
+      'Built with React, TypeScript, Tailwind CSS, Vite for fast builds, and Framer Motion for premium animations.',
+    ],
+    theme: {
+      accent: '#2dd4bf',
+      gradient: 'from-accent/20 via-teal-600/10 to-dark-950',
+      glow: 'rgba(45, 212, 191, 0.2)',
+      badge: 'bg-accent/15 text-accent border-accent/30',
+    },
+  },
 ];
