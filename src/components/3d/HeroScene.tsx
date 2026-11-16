@@ -6,20 +6,22 @@ import Lights from './Lights';
 
 export default function HeroScene() {
   return (
-    <Canvas
-      camera={{ position: [0, 0, 8], fov: 50 }}
-      style={{ width: '100%', height: '100%' }}
-      gl={{ 
-        antialias: true, 
-        alpha: true,
-        powerPreference: 'high-performance'
-      }}
-    >
-      <Suspense fallback={null}>
-        <Lights />
-        <FloatingOrb />
-        <ParticleField />
-      </Suspense>
-    </Canvas>
+    <div className="absolute inset-0 pointer-events-none z-0">
+      <Canvas
+        camera={{ position: [0, 0, 7], fov: 45 }}
+        style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
+        gl={{
+          antialias: true,
+          alpha: true,
+          powerPreference: 'high-performance',
+        }}
+      >
+        <Suspense fallback={null}>
+          <Lights />
+          <FloatingOrb />
+          <ParticleField />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 }

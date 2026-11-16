@@ -1,14 +1,16 @@
-import { Code2, Layers, Database, Wrench, Lightbulb } from 'lucide-react';
+import { Code2, Layers, Cloud, Network, Database, Wrench, Lightbulb } from 'lucide-react';
 import { skills } from '../../data/skills';
 import SectionHeading from '../common/SectionHeading';
 import Card from '../common/Card';
 
 const categoryIcons: Record<string, typeof Code2> = {
   LANGUAGES: Code2,
-  'FRAMEWORKS & LIBRARIES': Layers,
+  FRONTEND: Layers,
+  'BACKEND & CLOUD': Cloud,
+  'APIS & INTEGRATION': Network,
   DATABASES: Database,
   'TOOLS & PLATFORMS': Wrench,
-  'CONCEPTS': Lightbulb,
+  CONCEPTS: Lightbulb,
 };
 
 export default function Skills() {

@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
-import { Code2, Cloud, Database, Wrench, Lightbulb, MapPin } from 'lucide-react';
+import { Code2, Cloud, Database, Wrench, MapPin, Layers, Network } from 'lucide-react';
 import { profile } from '../../data/profile';
 import SectionHeading from '../common/SectionHeading';
 import Card from '../common/Card';
 
 const focusAreas = [
-  { label: 'Frontend', value: 'React, TypeScript, Tailwind CSS', icon: Code2 },
-  { label: 'Backend', value: 'AWS, REST APIs, Authentication', icon: Cloud },
-  { label: 'Languages', value: 'Java, JavaScript, TypeScript', icon: Code2 },
-  { label: 'Databases', value: 'MySQL, SQLite', icon: Database },
-  { label: 'Tools', value: 'Git, GitHub, VS Code, Postman', icon: Wrench },
-  { label: 'Concepts', value: 'RBAC, CRUD, Responsive Design', icon: Lightbulb },
+  { label: 'Frontend', value: 'React, Vite, TypeScript, Tailwind CSS', icon: Layers },
+  { label: 'Languages', value: 'Java, JavaScript, TypeScript, SQL', icon: Code2 },
+  { label: 'Backend & Cloud', value: 'AWS Lambda, API Gateway, Cognito', icon: Cloud },
+  { label: 'APIs & Integration', value: 'REST APIs, Leaflet.js, Open-Meteo', icon: Network },
+  { label: 'Databases & Auth', value: 'DynamoDB, Firestore, Firebase Auth', icon: Database },
+  { label: 'Tools', value: 'Git, GitHub, VS Code, Postman, Vercel', icon: Wrench },
 ];
 
 const highlights = [
-  { value: '3+', label: 'Client projects' },
+  { value: '4+', label: 'Featured projects' },
   { value: 'B.Tech', label: 'Computer Science' },
   { value: profile.location.split(',')[0], label: 'Based in UP', icon: true },
 ];

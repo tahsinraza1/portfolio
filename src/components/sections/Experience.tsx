@@ -1,4 +1,4 @@
-import { Briefcase, MapPin } from 'lucide-react';
+import { Briefcase, MapPin, ExternalLink } from 'lucide-react';
 import { experience } from '../../data/experience';
 import SectionHeading from '../common/SectionHeading';
 import Card from '../common/Card';
@@ -30,12 +30,24 @@ export default function Experience() {
                   <h3 className="mt-2 font-display text-xl font-bold text-white md:text-2xl">
                     {exp.role}
                   </h3>
-                  <p className="mt-1 flex items-center gap-2 text-ink-muted">
-                    <Briefcase size={14} className="text-accent/80" />
-                    {exp.company}
-                  </p>
+                  <div className="mt-1 flex items-center gap-2 text-ink-muted">
+                    <Briefcase size={14} className="text-accent/80 shrink-0" />
+                    {exp.website ? (
+                      <a
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 transition-colors hover:text-accent font-medium"
+                      >
+                        {exp.company}
+                        <ExternalLink size={12} className="text-accent/80" />
+                      </a>
+                    ) : (
+                      <span>{exp.company}</span>
+                    )}
+                  </div>
                   <p className="mt-1 flex items-center gap-2 text-sm text-ink-muted">
-                    <MapPin size={14} className="text-accent/80" />
+                    <MapPin size={14} className="text-accent/80 shrink-0" />
                     {exp.location}
                   </p>
                 </div>

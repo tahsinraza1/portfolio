@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LoadingScreen from './components/common/LoadingScreen';
-import CursorFollower from './components/common/CursorFollower';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
@@ -36,7 +35,6 @@ export default function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <CursorFollower />
           <Navbar scrollY={scrollY} />
           
           <main className="pt-16 md:pt-0">

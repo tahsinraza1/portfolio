@@ -9,7 +9,7 @@ export default function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const techStack = ['React', 'TypeScript', 'Node.js', 'AWS', 'Tailwind'];
+  const techStack = ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'AWS'];
 
   const socialLinks = [
     { icon: Github, href: profile.github, label: 'GitHub' },
@@ -31,10 +31,6 @@ export default function Hero() {
       />
       <div className="pointer-events-none absolute -right-24 top-1/4 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
       <div className="pointer-events-none absolute -left-20 bottom-10 h-72 w-72 rounded-full bg-teal-500/5 blur-3xl" />
-
-      <div className="pointer-events-none absolute inset-0 z-0 opacity-70">
-        <div className="absolute inset-y-12 right-10 hidden w-[30rem] rounded-[2rem] border border-white/10 bg-white/[0.02] shadow-[0_30px_80px_rgba(15,23,42,0.45)] backdrop-blur-sm lg:block" />
-      </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
@@ -65,7 +61,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.2 }}
             >
-              Frontend &amp; Backend Developer
+              {profile.title}
             </motion.p>
 
             <motion.p
@@ -74,8 +70,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.25 }}
             >
-              Building modern, scalable web applications with React, TypeScript, Tailwind CSS,
-              and AWS — focused on clean UI, performance, and great user experience.
+              Building scalable and responsive web applications with React, TypeScript, Tailwind CSS,
+              and AWS services — focused on reusable components, clean UI, and performance.
             </motion.p>
 
             <motion.div

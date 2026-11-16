@@ -13,10 +13,20 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [stage, setStage] = useState<'counter' | 'name'>('counter');
 
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' || e.key === ' ') {
+        onComplete();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onComplete]);
+
+  useEffect(() => {
     if (stage === 'counter') {
       let progress = 0;
       const interval = setInterval(() => {
-        progress += Math.random() * 20;
+        progress += Math.random() * 25 + 5;
         if (progress >= 100) {
           progress = 100;
           clearInterval(interval);
@@ -24,11 +34,11 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           
           setTimeout(() => {
             setStage('name');
-          }, 300);
+          }, 200);
         } else {
           setDisplayText(String(Math.floor(progress)));
         }
-      }, 150);
+      }, 100);
 
       return () => clearInterval(interval);
     } else {
@@ -42,9 +52,9 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           nameIndex++;
         } else {
           clearInterval(nameInterval);
-          setTimeout(onComplete, 700);
+          setTimeout(onComplete, 450);
         }
-      }, 500);
+      }, 350);
 
       return () => clearInterval(nameInterval);
     }
@@ -52,9 +62,10 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-dark-950"
+      className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center overflow-hidden bg-dark-950"
+      onClick={onComplete}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
     >
       <video
         className="absolute inset-0 h-full w-full object-cover opacity-[0.55] brightness-75"
@@ -112,10 +123,14 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            Software Engineer
+            Frontend Developer
           </motion.p>
         )}
       </motion.div>
+
+      <span className="absolute bottom-6 text-[11px] uppercase tracking-widest text-ink-muted/50">
+        Click anywhere to skip
+      </span>
     </motion.div>
   );
 }

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -7,39 +7,47 @@ export default function ParticleField() {
 
   useFrame(() => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.x += 0.0005;
-      pointsRef.current.rotation.y += 0.0003;
+      pointsRef.current.rotation.x += 0.0003;
+      pointsRef.current.rotation.y += 0.0005;
     }
   });
 
-  const particleCount = 500;
-  const geometry = new THREE.BufferGeometry();
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
+  const particleCount = 200;
+  const [positions, colors] = useMemo(() => {
+    const pos = new Float32Array(particleCount * 3);
+    const col = new Float32Array(particleCount * 3);
+    const baseColor = new THREE.Color('#2dd4bf');
 
-  for (let i = 0; i < particleCount * 3; i += 3) {
-    positions[i] = (Math.random() - 0.5) * 20;
-    positions[i + 1] = (Math.random() - 0.5) * 20;
-    positions[i + 2] = (Math.random() - 0.5) * 20;
+    for (let i = 0; i < particleCount * 3; i += 3) {
+      pos[i] = (Math.random() - 0.5) * 16;
+      pos[i + 1] = (Math.random() - 0.5) * 16;
+      pos[i + 2] = (Math.random() - 0.5) * 10;
 
-    const color = new THREE.Color();
-    color.setHSL(0.55 + Math.random() * 0.1, 0.8, 0.5);
-    colors[i] = color.r;
-    colors[i + 1] = color.g;
-    colors[i + 2] = color.b;
-  }
-
-  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      col[i] = baseColor.r;
+      col[i + 1] = baseColor.g;
+      col[i + 2] = baseColor.b;
+    }
+    return [pos, col];
+  }, []);
 
   return (
-    <points ref={pointsRef} geometry={geometry}>
+    <points ref={pointsRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          args={[positions, 3]}
+        />
+        <bufferAttribute
+          attach="attributes-color"
+          args={[colors, 3]}
+        />
+      </bufferGeometry>
       <pointsMaterial
-        size={0.1}
-        color="#00d9ff"
+        size={0.06}
+        color="#2dd4bf"
         sizeAttenuation={true}
         transparent={true}
-        opacity={0.6}
+        opacity={0.4}
         vertexColors={true}
       />
     </points>

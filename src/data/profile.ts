@@ -1,12 +1,12 @@
 export const profile = {
   name: 'Tahsin Raza',
-  title: 'Frontend & Backend Developer',
+  title: 'Frontend Developer',
   email: 'tahsinraza019@gmail.com',
   phone: '+91 7905642238',
-  location: 'Lucknow, Uttar Pradesh',
+  location: 'Mainpuri, Uttar Pradesh',
   github: 'https://github.com/tahsinraza1',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/tahsin-raza/',
   resume: '/Tahsin_resume.pdf',
   summary:
-    'I am a Frontend and Backend Developer with hands-on experience in building modern, scalable, and responsive web applications. Currently working at Codiva Software Pvt Ltd, where I contribute to both frontend development and backend API integration using AWS services. On the frontend, I specialize in HTML, CSS, Tailwind CSS, JavaScript, and React, focusing on clean UI, performance, and user experience. On the backend, I work with AWS services to build secure and scalable APIs, handle authentication, and manage cloud-based workflows.',
+    'Frontend Developer with professional experience building scalable and responsive web applications using React, TypeScript, JavaScript, and Tailwind CSS. Currently contributing to Fyboard, an enterprise business management platform, developing frontend modules across HR, Finance, Automation, DataBoard, Documents, Projects, and other business workflows. Previously worked on real-time monitoring applications and REST API integrations using AWS services. Strong in reusable component development, responsive UI, API integration, authentication, RBAC, and performance optimization.',
 };

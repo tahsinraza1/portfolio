@@ -83,10 +83,10 @@ function ProjectCard({
         <img
           src={project.image}
           alt={project.title}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
         <div
-          className={`absolute inset-0 bg-gradient-to-t ${project.theme.gradient} via-dark-950/50 to-dark-950/20`}
+          className={`absolute inset-0 bg-gradient-to-t ${project.theme.gradient} via-dark-950/60 to-dark-950/25`}
         />
         <div
           className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl transition-opacity duration-500 group-hover:opacity-100 opacity-60"
@@ -209,9 +209,9 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <img
             src={project.image}
             alt={project.title}
-            className="h-56 w-full object-cover md:h-64"
+            className="h-56 w-full object-cover object-top md:h-72"
           />
-          <div className={`absolute inset-0 bg-gradient-to-t ${project.theme.gradient} to-transparent`} />
+          <div className={`absolute inset-0 bg-gradient-to-t ${project.theme.gradient} via-dark-950/70 to-dark-950/20`} />
           <button
             onClick={onClose}
             className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-dark-950/70 text-white backdrop-blur-sm transition-colors hover:border-accent/40 hover:text-accent"

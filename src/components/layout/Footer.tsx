@@ -1,13 +1,50 @@
 import { motion } from 'framer-motion';
-import { Github, Mail, ArrowUp, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp, Phone } from 'lucide-react';
 import { profile } from '../../data/profile';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const socialLinks = [
-    { icon: Github, href: profile.github, label: 'GitHub' },
-    { icon: Mail, href: `mailto:${profile.email}`, label: 'Email' },
-    { icon: Phone, href: `tel:${profile.phone}`, label: 'Phone' },
+    {
+      icon: Github,
+      href: profile.github,
+      label: 'GitHub',
+      color: '#ffffff',
+      borderColor: 'rgba(255, 255, 255, 0.2)',
+      bgColor: 'rgba(255, 255, 255, 0.06)',
+      glowColor: 'rgba(255, 255, 255, 0.25)',
+    },
+    ...(profile.linkedin
+      ? [
+          {
+            icon: Linkedin,
+            href: profile.linkedin,
+            label: 'LinkedIn',
+            color: '#0a66c2',
+            borderColor: 'rgba(10, 102, 194, 0.35)',
+            bgColor: 'rgba(10, 102, 194, 0.1)',
+            glowColor: 'rgba(10, 102, 194, 0.35)',
+          },
+        ]
+      : []),
+    {
+      icon: Mail,
+      href: `mailto:${profile.email}`,
+      label: 'Email',
+      color: '#ea4335',
+      borderColor: 'rgba(234, 67, 53, 0.35)',
+      bgColor: 'rgba(234, 67, 53, 0.1)',
+      glowColor: 'rgba(234, 67, 53, 0.35)',
+    },
+    {
+      icon: Phone,
+      href: `https://wa.me/917905642238`,
+      label: 'WhatsApp / Phone',
+      color: '#25d366',
+      borderColor: 'rgba(37, 211, 102, 0.35)',
+      bgColor: 'rgba(37, 211, 102, 0.1)',
+      glowColor: 'rgba(37, 211, 102, 0.35)',
+    },
   ];
 
   const scrollTop = () => {
@@ -32,7 +69,7 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="space-y-2 text-sm text-ink-muted">
-              {['Home', 'About', 'Education', 'Contact'].map((link) => (
+              {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'].map((link) => (
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}
@@ -50,7 +87,7 @@ export default function Footer() {
               Projects
             </h4>
             <ul className="space-y-2 text-sm text-ink-muted">
-              {['Featured Work', 'Client Projects', 'School Website'].map((item) => (
+              {['Fyboard', 'Indian Railways Tracking', 'Car Rental Express', 'Dripp Society'].map((item) => (
                 <li key={item}>
                   <a href="#projects" className="transition-colors hover:text-accent">
                     {item}
@@ -64,18 +101,30 @@ export default function Footer() {
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest text-white">
               Connect
             </h4>
-            <div className="flex gap-3">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map(({ icon: Icon, href, label, color, borderColor, bgColor, glowColor }) => (
                 <motion.a
                   key={label}
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-ink-muted transition-colors hover:border-accent/40 hover:bg-accent/10 hover:text-accent"
-                  whileHover={{ y: -3 }}
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border backdrop-blur-sm transition-all duration-300"
+                  style={{
+                    color,
+                    borderColor,
+                    backgroundColor: bgColor,
+                  }}
+                  whileHover={{
+                    y: -3,
+                    scale: 1.08,
+                    boxShadow: `0 8px 24px ${glowColor}`,
+                    borderColor: color,
+                  }}
+                  whileTap={{ scale: 0.95 }}
                   aria-label={label}
+                  title={label}
                 >
-                  <Icon size={18} />
+                  <Icon size={19} />
                 </motion.a>
               ))}
             </div>

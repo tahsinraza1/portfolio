@@ -24,7 +24,7 @@ export const education: Education[] = [
   {
     id: 'intermediate',
     degree: 'Intermediate',
-    institution: 'K.N Intermediate School',
+    institution: 'K.N. Intermediate School',
     location: 'Deoria',
     year: '2019 – 2020',
   },
@@ -39,9 +39,9 @@ export const education: Education[] = [
 
 export const certifications: Certification[] = [
   {
-    id: 'ikigai-mearn',
-    title: 'Successfully Completed MEARN Stack',
+    id: 'ikigai-mern',
+    title: 'Successfully Completed MERN Stack Program',
     issuer: 'IKIGAI School of AI',
-    year: 'April – Jun 2024',
+    year: 'April – June 2024',
   },
 ];

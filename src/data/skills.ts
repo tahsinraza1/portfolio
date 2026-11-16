@@ -20,11 +20,33 @@ export const skills: Skill[] = [
     ],
   },
   {
-    category: 'FRAMEWORKS & LIBRARIES',
+    category: 'FRONTEND',
     items: [
       { name: 'React' },
+      { name: 'Vite' },
       { name: 'Tailwind CSS' },
       { name: 'Bootstrap' },
+      { name: 'Responsive Design' },
+      { name: 'Reusable Components' },
+    ],
+  },
+  {
+    category: 'BACKEND & CLOUD',
+    items: [
+      { name: 'AWS Lambda' },
+      { name: 'API Gateway' },
+      { name: 'AWS Cognito' },
+      { name: 'Firebase Authentication' },
+    ],
+  },
+  {
+    category: 'APIS & INTEGRATION',
+    items: [
+      { name: 'REST APIs' },
+      { name: 'API Integration' },
+      { name: 'Open-Meteo APIs' },
+      { name: 'Web Speech API' },
+      { name: 'WhatsApp Integration' },
     ],
   },
   {
@@ -32,6 +54,8 @@ export const skills: Skill[] = [
     items: [
       { name: 'MySQL' },
       { name: 'SQLite' },
+      { name: 'Firebase Firestore' },
+      { name: 'Amazon DynamoDB' },
     ],
   },
   {
@@ -42,18 +66,17 @@ export const skills: Skill[] = [
       { name: 'VS Code' },
       { name: 'Postman' },
       { name: 'Vercel' },
-      { name: 'Cursor' },
+      { name: 'Antigravity' },
       { name: 'Claude Code' },
-      { name: 'GitHub Copilot' },
     ],
   },
   {
     category: 'CONCEPTS',
     items: [
-      { name: 'REST APIs' },
-      { name: 'Role-Based Access Control' },
+      { name: 'RBAC' },
       { name: 'CRUD' },
-      { name: 'Responsive Design' },
+      { name: 'Authentication' },
+      { name: 'Performance Optimization' },
     ],
   },
 ];
